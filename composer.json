@@ -1,0 +1,21 @@
+{
+    "name": "swalker2/cpanel",
+    "description": "the simplest PHP implementation of the cpanel versio 2 api for Laravel",
+    "license": "MIT",
+    "keywords": ["laravel","cpanel"],
+    "authors": [
+        {
+            "name": "swalker2",
+            "email": "edu@rdo.blog.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Swalker2\\Cpanel\\": "src/"
+        }
+    }
+}
