@@ -8,13 +8,11 @@ At the moment suporting only the Zone Edit module but you can write your own mod
  ### Install
  
  Require this package with composer using the following command:
- 
  ```bash
  composer require barryvdh/swalker2/cpanel
  ```
  
  After updating composer, add the service provider to the `providers` array in `config/app.php`
- 
  ```php
  Swalker2\Cpanel\CpanelServiceProvider::class,
  ```
@@ -23,6 +21,38 @@ At the moment suporting only the Zone Edit module but you can write your own mod
  ```bash
  php artisan vendor:publish --tag=swalker2.cpanel
  ```
+
+ Finally, add the .env variables:
+ ```
+CPANEL_HOST=https://domain.com
+CPANEL_PORT=2083
+CPANEL_USERNAME=yourname
+CPANEL_PASSWORD=yourpass
+ ```
+
+### But how do I use it?
+After completing the instalation steps, you simply make a cpanel instance, like so:
+```php
+	$cpanel = make(Cpanel::class);
+```
+
+
+And then you can call the module implementations
+```php
+	dd(
+		$cpanel->zoneEdit('mydomain.com')->fetch()
+	);
+```
+
+
+Note that the Modules that you create can be instantiated individually:
+```php
+	$mymodule = new MyCpanelModule();
+	dd(
+		$mymodule->doSomething()
+	);
+```
+
 
 ### Writing a module
 To write a module you need to extend the class ``Swalker2\CpanelFunction``
