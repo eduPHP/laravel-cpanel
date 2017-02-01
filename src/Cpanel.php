@@ -2,8 +2,10 @@
 
 namespace Swalker2\Cpanel;
 
+use Swalker2\Cpanel\Domains\Domains;
+use Swalker2\Cpanel\Email\CpanelEmail;
 use Swalker2\Cpanel\SSL\CpanelSSL;
-use Swalker2\Cpanel\ZoneEdit\CpanelZoneEdit;
+use Swalker2\Cpanel\ZoneEdit\ZoneEdit;
 
 class Cpanel
 {
@@ -29,7 +31,7 @@ class Cpanel
      *
      * @param string $domain dominio no formato example.com
      *
-     * @return CpanelZoneEdit
+     * @return ZoneEdit
      * @throws \Exception
      */
     public function zoneEdit($domain = '')
@@ -38,13 +40,24 @@ class Cpanel
             throw new \Exception("Domain name required");
         }
         
-        return new CpanelZoneEdit($domain);
+        return new ZoneEdit($domain);
     }
     
     public function ssl()
     {
         return new CpanelSSL();
     }
+    
+    public function email()
+    {
+        return new CpanelEmail();
+    }
+    
+    public function domains()
+    {
+        return new Domains();
+    }
+    
     
     /**
      * Adiciona campos da array informada nas configurações
@@ -59,7 +72,6 @@ class Cpanel
             $this->fields = array_merge($this->fields, $fields);
         }
     }
-    
     
     public function cleanConfig()
     {

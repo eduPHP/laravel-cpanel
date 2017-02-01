@@ -1,0 +1,23 @@
+{
+  "cpanelresult": {
+    "apiversion": 2,
+    "postevent": {
+      "result": 1
+    },
+    "func": "delforward",
+    "error": "Unable to locate the forwarder “foobar@gmail.com” for account “foo@rdo.blog.br” on domain “rdo.blog.br”.",
+    "preevent": {
+      "result": 1
+    },
+    "event": {
+      "result": 1
+    },
+    "module": "Email",
+    "data": [
+      {
+        "statusmsg": "Failed to delete forwarder.",
+        "status": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "cpanelresult": {
+    "func": "addforward",
+    "data": [
+      {
+        "email": "foo@rdo.blog.br",
+        "domain": "rdo.blog.br",
+        "forward": "foobar@gmail.com"
+      }
+    ],
+    "apiversion": 2,
+    "event": {
+      "result": 1
+    },
+    "preevent": {
+      "result": 1
+    },
+    "module": "Email",
+    "postevent": {
+      "result": 1
+    }
+  }
+}

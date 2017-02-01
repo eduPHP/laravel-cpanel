@@ -1,0 +1,22 @@
+{
+  "cpanelresult": {
+    "module": "Email",
+    "func": "editquota",
+    "postevent": {
+      "result": 1
+    },
+    "apiversion": 2,
+    "preevent": {
+      "result": 1
+    },
+    "event": {
+      "result": 1
+    },
+    "data": [
+      {
+        "result": 1,
+        "reason": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "cpanelresult": {
+    "data": [
+      {
+        "dest": "foo@yourdomain.com",
+        "uri_forward": "bar%40gmail.com",
+        "forward": "bar@gmail.com",
+        "html_forward": "bar@gmail.com",
+        "html_dest": "foo@yourdomain.com",
+        "uri_dest": "foo%40yourdomain.com"
+      }
+    ],
+    "postevent": {
+      "result": 1
+    },
+    "event": {
+      "result": 1
+    },
+    "module": "Email",
+    "apiversion": 2,
+    "func": "listforwards",
+    "preevent": {
+      "result": 1
+    }
+  }
+}

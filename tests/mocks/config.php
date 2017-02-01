@@ -35,7 +35,18 @@ function app()
     return new appmock();
 }
 
-function env($a, $b = '')
+function env($key, $default = null)
 {
-    return $b;
+    if (file_exists(__DIR__ . "/../../.env")) {
+        $dotenv = new \Dotenv\Dotenv(__DIR__ . "/../../");
+        $dotenv->load();
+    }
+    
+    $value = getenv($key);
+    
+    if ($value === false) {
+        return value($default);
+    }
+    
+    return $value;
 }

@@ -1,0 +1,22 @@
+{
+  "cpanelresult": {
+    "func": "delforward",
+    "event": {
+      "result": 1
+    },
+    "postevent": {
+      "result": 1
+    },
+    "apiversion": 2,
+    "module": "Email",
+    "preevent": {
+      "result": 1
+    },
+    "data": [
+      {
+        "statusmsg": "OK",
+        "status": "1"
+      }
+    ]
+  }
+}

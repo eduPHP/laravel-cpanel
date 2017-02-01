@@ -2,12 +2,12 @@
 
 
 use Illuminate\Support\Collection;
-use Swalker2\Cpanel\ZoneEdit\ZoneDNS;
+use Swalker2\Cpanel\ZoneEdit\Zone;
 
 class CpanelZoneEditTest extends BaseCpanel
 {
     
-    use MockResponses;
+    use MockZoneEditResponses;
     
     /** @test */
     function it_tests_if_zoneedit_is_initializing_correctly()
@@ -62,7 +62,7 @@ class CpanelZoneEditTest extends BaseCpanel
         $zonedit->testHandler(
             $this->mockZoneEditSuccessfullFetch() // there is already a foo.yourdomain.com
         );
-        $newzone = new ZoneDNS([
+        $newzone = new Zone([
             'name'    => 'foo',
             'domain'  => 'yourdomain.com',
             'address' => '10.10.10.10',
@@ -116,7 +116,7 @@ class CpanelZoneEditTest extends BaseCpanel
         $zonedit->testHandler(
             $this->mockZoneEditStoreResponses()
         );
-        $newzone = new ZoneDNS([
+        $newzone = new Zone([
             'name'   => 'foo',
             'domain' => 'yourdomain.com',
         ]);
@@ -145,7 +145,7 @@ class CpanelZoneEditTest extends BaseCpanel
         $zonedit->testHandler(
             $this->mockZoneEditStoreErrorResponse()
         );
-        $newzone = new ZoneDNS([
+        $newzone = new Zone([
             'name'    => 'foo',
             'domain'  => 'yourdomain.com',
             'address' => '10.10.10.10',
@@ -236,7 +236,7 @@ class CpanelZoneEditTest extends BaseCpanel
         $zonedit->testHandler(
             $this->mockZoneEditStoreResponses()
         );
-        $newzone = new ZoneDNS([
+        $newzone = new Zone([
             'name'   => 'foo',
             'domain' => 'yourdomain.com',
         ]);

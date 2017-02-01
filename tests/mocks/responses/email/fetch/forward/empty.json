@@ -1,0 +1,17 @@
+{
+  "cpanelresult": {
+    "func": "listforwards",
+    "preevent": {
+      "result": 1
+    },
+    "postevent": {
+      "result": 1
+    },
+    "data": [],
+    "event": {
+      "result": 1
+    },
+    "module": "Email",
+    "apiversion": 2
+  }
+}

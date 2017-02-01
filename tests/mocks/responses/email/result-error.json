@@ -1,0 +1,23 @@
+{
+  "cpanelresult": {
+    "postevent": {
+      "result": 1
+    },
+    "error": "Sorry, you do not have access to the domain 'yourdomain.com'",
+    "event": {
+      "result": 1
+    },
+    "data": [
+      {
+        "reason": "Sorry, you do not have access to the domain 'yourdomain.com'",
+        "result": 0
+      }
+    ],
+    "func": "addpop",
+    "module": "Email",
+    "apiversion": 2,
+    "preevent": {
+      "result": 1
+    }
+  }
+}

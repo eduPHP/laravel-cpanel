@@ -3,14 +3,14 @@
 namespace Swalker2\Cpanel\SSL;
 
 
-use Swalker2\Cpanel\CpanelFunction;
+use Swalker2\Cpanel\CpanelBaseModule;
 
 /**
  * TODO: make it work and write tests... or write tests and make it work...
  * Class CpanelSSL
  * @package Swalker2\Cpanel\SSL
  */
-class CpanelSSL extends CpanelFunction
+class CpanelSSL extends CpanelBaseModule
 {
     
     function __construct()

@@ -1,0 +1,23 @@
+{
+  "cpanelresult": {
+    "module": "Email",
+    "apiversion": 2,
+    "event": {
+      "result": 1
+    },
+    "data": [
+      {
+        "reason": "OK",
+        "result": 1,
+        "rawout": "\nRemoved any entries belonging to “foo” from the “username” Horde database.\n\n"
+      }
+    ],
+    "postevent": {
+      "result": 1
+    },
+    "preevent": {
+      "result": 1
+    },
+    "func": "delpop"
+  }
+}

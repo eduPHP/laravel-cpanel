@@ -4,9 +4,9 @@ namespace Swalker2\Cpanel\ZoneEdit;
 
 
 use Illuminate\Support\Collection;
-use Swalker2\Cpanel\CpanelFunction;
+use Swalker2\Cpanel\CpanelBaseModule;
 
-class CpanelZoneEdit extends CpanelFunction
+class ZoneEdit extends CpanelBaseModule
 {
     
     /**
@@ -40,12 +40,12 @@ class CpanelZoneEdit extends CpanelFunction
     /**
      * Stores a new DNS Zone
      *
-     * @param ZoneDNS $zone
+     * @param Zone $zone
      *
      * @return Collection
      * @throws \Exception
      */
-    public function store(ZoneDNS $zone)
+    public function store(Zone $zone)
     {
         if ($this->cpanel->zoneEdit($zone->domain)->filter($zone->name)->fetch()->count()) {
             throw new \Exception("The Zone " . $zone->name . "." . $zone->domain . " already exists");
@@ -61,7 +61,7 @@ class CpanelZoneEdit extends CpanelFunction
     
         $response = $this->getApiData();
         
-        if ($response->cpanelresult->data[0]->result->status == 0) {
+        if ($response->data[0]->result->status == 0) {
             throw new \Exception("Error trying to insert new Zone");
         }
         
@@ -69,12 +69,12 @@ class CpanelZoneEdit extends CpanelFunction
     }
     
     /**
-     * @param ZoneDNS $zone
+     * @param Zone $zone
      *
-     * @return ZoneDNS
+     * @return Zone
      * @throws \Exception
      */
-    public function update(ZoneDNS $zone)
+    public function update(Zone $zone)
     {
         $this->verifyLineOrDifferentZoneExists($zone);
         
@@ -89,14 +89,14 @@ class CpanelZoneEdit extends CpanelFunction
         
         $response = $this->getApiData();
         
-        if ($response->cpanelresult->data[0]->result->status == 0) {
+        if ($response->data[0]->result->status == 0) {
             throw new \Exception("Error trying to update DNS Zone.");
         }
         
         return $zone;
     }
     
-    public function destroy(ZoneDNS $zone)
+    public function destroy(Zone $zone)
     {
         if ( ! $zone->line) {
             throw new \Exception("Invalid Object, the \"line\" property is neccessary while removing a Zone.");
@@ -111,7 +111,7 @@ class CpanelZoneEdit extends CpanelFunction
         
         $response = $this->getApiData();
         
-        if ($response->cpanelresult->data[0]->result->status == 0) {
+        if ($response->data[0]->result->status == 0) {
             throw new \Exception("Error trying to remove Zone.");
         }
         
@@ -143,18 +143,18 @@ class CpanelZoneEdit extends CpanelFunction
      */
     private function collectZones($response)
     {
-        if ($response->cpanelresult->data[0]->status == 0) {
+        if ($response->data[0]->status == 0) {
             throw new \Exception("Erro ao tentar obter coleção de zonas. Você deve informar um dominio para a pesquisa.");
         }
         
-        $itens = $response->cpanelresult->data[0]->record;
+        $itens = $response->data[0]->record;
         $zones = new Collection();
         
         foreach ($itens as $item) {
             $item->name = str_replace('.' . $this->domain . '.', '', $item->name);
             $item->domain = $this->domain;
             $zones->push(
-                new ZoneDNS($item)
+                new Zone($item)
             );
         }
         
@@ -162,11 +162,11 @@ class CpanelZoneEdit extends CpanelFunction
     }
     
     /**
-     * @param ZoneDNS $zone
+     * @param Zone $zone
      *
      * @throws \Exception
      */
-    private function verifyLineOrDifferentZoneExists(ZoneDNS $zone)
+    private function verifyLineOrDifferentZoneExists(Zone $zone)
     {
         if ( ! $zone->line) {
             throw new \Exception("Invalid object, the \"line\" must be a valid line number.");

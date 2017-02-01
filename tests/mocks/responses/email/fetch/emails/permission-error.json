@@ -1,0 +1,23 @@
+{
+  "cpanelresult": {
+    "postevent": {
+      "result": 1
+    },
+    "data": [
+      {
+        "reason": "(XID kyv5by) You do not have an email account named “de-buenas@yolo.com”.",
+        "result": 0
+      }
+    ],
+    "error": "(XID kyv5by) You do not have an email account named “de-buenas@yolo.com”.",
+    "apiversion": 2,
+    "event": {
+      "result": 1
+    },
+    "preevent": {
+      "result": 1
+    },
+    "func": "editquota",
+    "module": "Email"
+  }
+}

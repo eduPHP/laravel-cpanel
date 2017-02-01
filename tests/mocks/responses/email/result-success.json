@@ -1,0 +1,22 @@
+{
+  "cpanelresult": {
+    "postevent": {
+      "result": 1
+    },
+    "apiversion": 2,
+    "event": {
+      "result": 1
+    },
+    "module": "Email",
+    "func": "addpop",
+    "data": [
+      {
+        "reason": "",
+        "result": 1
+      }
+    ],
+    "preevent": {
+      "result": 1
+    }
+  }
+}

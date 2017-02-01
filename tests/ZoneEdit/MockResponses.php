@@ -2,7 +2,7 @@
 
 use GuzzleHttp\Handler\MockHandler;
 
-trait MockResponses
+trait MockZoneEditResponses
 {
     
     /**
@@ -42,7 +42,7 @@ trait MockResponses
      */
     private function mockZoneEditStoreErrorResponse()
     {
-        return $this->mockResponse(['zoneedit.fetch.empty', 'zoneedit.result.error']);
+        return $this->mockResponse(['zoneedit.fetch.empty', 'result-error']);
     }
     
     /**
@@ -50,7 +50,7 @@ trait MockResponses
      */
     private function mockZoneEditDestroyErrorResponse()
     {
-        return $this->mockResponse(['zoneedit.fetch.filter', 'zoneedit.result.error']);
+        return $this->mockResponse(['zoneedit.fetch.filter', 'result-error']);
     }
     
     /**
@@ -66,7 +66,7 @@ trait MockResponses
      */
     private function mockZoneEditUpdateErrorResponse()
     {
-        return $this->mockResponse(['zoneedit.fetch.filter','zoneedit.fetch.filter', 'zoneedit.result.error']);
+        return $this->mockResponse(['zoneedit.fetch.filter','zoneedit.fetch.filter', 'result-error']);
     }
     
     /**

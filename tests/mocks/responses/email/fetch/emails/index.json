@@ -1,0 +1,60 @@
+{
+  "cpanelresult": {
+    "data": [
+      {
+        "user": "teste",
+        "login": "teste@yourdomain.com",
+        "diskusedpercent20": 0,
+        "email": "teste@yourdomain.com",
+        "_diskused": 0,
+        "humandiskquota": "50 MB",
+        "diskquota": "50.00",
+        "_diskquota": "52428800",
+        "domain": "yourdomain.com",
+        "humandiskused": "None",
+        "txtdiskquota": "50.00",
+        "diskusedpercent": 0,
+        "suspended_incoming": 0,
+        "suspended_login": 0,
+        "diskused": 0,
+        "mtime": 1485936097
+      },
+      {
+        "_diskquota": "52428800",
+        "domain": "yourdomain.com",
+        "humandiskused": "None",
+        "txtdiskquota": "50.00",
+        "diskusedpercent": 0,
+        "suspended_login": null,
+        "suspended_incoming": 0,
+        "diskused": 0,
+        "mtime": 1485936097,
+        "user": "other",
+        "login": "other@yourdomain.com",
+        "diskusedpercent20": 0,
+        "email": "other@yourdomain.com",
+        "_diskused": 0,
+        "humandiskquota": "50 MB",
+        "diskquota": "50.00"
+      },
+      {
+        "_diskquota": "52428800",
+        "domain": "yourdomain.com",
+        "diskusedpercent": 0,
+        "humandiskused": "None",
+        "txtdiskquota": "50.00",
+        "diskused": 0,
+        "mtime": 1485936097,
+        "suspended_incoming": 0,
+        "suspended_login": null,
+        "user": "foo",
+        "diskusedpercent20": 0,
+        "login": "foo@yourdomain.com",
+        "email": "foo@yourdomain.com",
+        "humandiskquota": "50 MB",
+        "_diskused": 0,
+        "diskquota": "50.00"
+      }
+    ]
+  }
+}

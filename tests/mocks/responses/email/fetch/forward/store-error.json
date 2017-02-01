@@ -1,0 +1,20 @@
+{
+  "cpanelresult": {
+    "data": [
+      "Error opening “/etc/valiases/de-buenas.blog.br” to write: Permission denied at /usr/local/cpanel/Cpanel/Email/Aliases.pm line 101.\n"
+    ],
+    "event": {
+      "result": 1
+    },
+    "error": "Error opening “/etc/valiases/de-buenas.blog.br” to write: Permission denied at /usr/local/cpanel/Cpanel/Email/Aliases.pm line 101.\n",
+    "func": "addforward",
+    "preevent": {
+      "result": 1
+    },
+    "apiversion": 2,
+    "postevent": {
+      "result": 1
+    },
+    "module": "Email"
+  }
+}
