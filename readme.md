@@ -9,7 +9,7 @@ At the moment suporting only the Zone Edit module but you can write your own mod
  
  Require this package with composer using the following command:
  ```bash
- composer require barryvdh/swalker2/cpanel
+ composer require swalker2/cpanel
  ```
  
  After updating composer, add the service provider to the `providers` array in `config/app.php`
