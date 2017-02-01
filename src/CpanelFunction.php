@@ -17,7 +17,7 @@ class CpanelFunction
     
     function __construct()
     {
-        $this->cpanel = make(Cpanel::class);
+        $this->cpanel = app()->make(Cpanel::class);
         $this->config['base_uri'] = $this->cpanel->url;
     }
     

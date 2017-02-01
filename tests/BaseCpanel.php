@@ -16,7 +16,7 @@ abstract class BaseCpanel extends PHPUnit_Framework_TestCase
     {
         parent::__construct();
         
-        $this->cpanel = make(Cpanel::class);
+        $this->cpanel = app()->make(Cpanel::class);
     }
     
     /**

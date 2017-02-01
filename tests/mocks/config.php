@@ -12,20 +12,30 @@ function config($str)
     throw new Exception("nope");
 }
 
-/**
- * @var $cpanel \Swalker2\Cpanel\Cpanel
- */
-$cpanel = null;
-function make($classe)
+class appmock
 {
-    global $cpanel;
-    if ($cpanel === null) {
-        $cpanel = new $classe;
-    }
     
-    return $cpanel;
+    /**
+     * @var $cpanel \Swalker2\Cpanel\Cpanel
+     */
+    public static $cpanel = null;
+    
+    public function make($class)
+    {
+        if (static::$cpanel === null) {
+            static::$cpanel = new $class;
+        }
+        
+        return static::$cpanel;
+    }
 }
 
-function env($a,$b=''){
+function app()
+{
+    return new appmock();
+}
+
+function env($a, $b = '')
+{
     return $b;
 }

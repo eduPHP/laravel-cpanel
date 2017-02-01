@@ -33,7 +33,7 @@ CPANEL_PASSWORD=yourpass
 ### But how do I use it?
 After completing the instalation steps, you simply make a cpanel instance, like so:
 ```php
-	$cpanel = make(Cpanel::class);
+	$cpanel = app()->make(Cpanel::class);
 ```
 
 

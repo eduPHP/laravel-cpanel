@@ -53,7 +53,7 @@ class ZoneDNS
             }
         }
         
-        $cpanel = make(Cpanel::class);
+        $cpanel = app()->make(Cpanel::class);
         return $cpanel
             ->zoneEdit($this->domain)
             ->update($this);
@@ -61,7 +61,7 @@ class ZoneDNS
     
     public function destroy()
     {
-        $cpanel = make(Cpanel::class);
+        $cpanel = app()->make(Cpanel::class);
         return $cpanel
             ->zoneEdit($this->domain)
             ->destroy($this);
