@@ -2,7 +2,9 @@
 
 The simplest PHP implementation of the cpanel version 2 api for Laravel
 
-At the moment suporting only the Zone Edit module but you can write your own modules if you dig into the [Guide to cPanel API 2](https://documentation.cpanel.net/display/SDK/Guide+to+cPanel+API+2)
+At the moment suporting only the Zone Edit and Email modules 
+
+You can write your own modules if you dig into the [Guide to cPanel API 2](https://documentation.cpanel.net/display/SDK/Guide+to+cPanel+API+2)
  
  
  ### Install
