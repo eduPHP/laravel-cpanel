@@ -1,0 +1,12 @@
+{
+  "cpanelresult": {
+    "data": [
+      {
+        "result":{
+          "status": 0,
+          "statusmsg": "crazy stuff happens"
+        }
+      }
+    ]
+  }
+}

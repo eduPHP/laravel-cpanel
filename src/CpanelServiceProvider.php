@@ -1,12 +1,12 @@
 <?php
 
-namespace Swalker\Cpanel;
+namespace Swalker2\Cpanel;
 
-use App\Config;
 use Illuminate\Support\ServiceProvider;
 
 class CpanelServiceProvider extends ServiceProvider
 {
+    
     /**
      * Bootstrap any application services.
      *
@@ -14,9 +14,11 @@ class CpanelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->share('conf',Config::first());
+        $this->publishes([
+            __DIR__ . '/../config/cpanel.php' => config_path('cpanel.php'),
+        ],'swalker2.cpanel');
     }
-
+    
     /**
      * Register any application services.
      *
@@ -24,6 +26,8 @@ class CpanelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(Cpanel::class, function () {
+            return new Cpanel();
+        });
     }
 }

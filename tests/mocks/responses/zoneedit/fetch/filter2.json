@@ -1,0 +1,23 @@
+{
+  "cpanelresult": {
+    "data": [
+      {
+        "record": [
+          {
+            "name": "bar.yourdomain.com.",
+            "record": "23.123.231.1",
+            "Line": 240,
+            "line": 240,
+            "type": "A",
+            "address": "23.123.231.1",
+            "class": "IN",
+            "ttl": "14400"
+          }
+        ],
+        "status": 1,
+        "statusmsg": "Zone Serialized",
+        "serialnum": null
+      }
+    ]
+  }
+}

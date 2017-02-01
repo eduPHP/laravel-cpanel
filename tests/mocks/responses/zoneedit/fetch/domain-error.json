@@ -1,0 +1,13 @@
+{
+  "cpanelresult": {
+    "event": {
+      "result": 1
+    },
+    "data": [
+      {
+        "status": 0,
+        "statusmsg": "You do not have permission to read the zone for : yourdomain.com"
+      }
+    ]
+  }
+}

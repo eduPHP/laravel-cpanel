@@ -1,9 +1,11 @@
 <?php
 
-namespace Swalker\Cpanel;
+namespace Swalker2\Cpanel\ZoneEdit;
 
 
-class ZonaDNS
+use Swalker2\Cpanel\Cpanel;
+
+class ZoneDNS
 {
     
     public $line;
@@ -51,15 +53,17 @@ class ZonaDNS
             }
         }
         
-        return (new Cpanel())
-            ->zoneEdit()
+        $cpanel = make(Cpanel::class);
+        return $cpanel
+            ->zoneEdit($this->domain)
             ->update($this);
     }
     
     public function destroy()
     {
-        return (new Cpanel())
-            ->zoneEdit()
+        $cpanel = make(Cpanel::class);
+        return $cpanel
+            ->zoneEdit($this->domain)
             ->destroy($this);
     }
 }

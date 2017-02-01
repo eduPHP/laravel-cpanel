@@ -1,14 +1,21 @@
 <?php
 
-namespace Swalker\Cpanel;
+namespace Swalker2\Cpanel\SSL;
 
 
+use Swalker2\Cpanel\CpanelFunction;
+
+/**
+ * TODO: make it work and write tests... or write tests and make it work...
+ * Class CpanelSSL
+ * @package Swalker2\Cpanel\SSL
+ */
 class CpanelSSL extends CpanelFunction
 {
     
-    function __construct(Cpanel $cpanel)
+    function __construct()
     {
-        parent::__construct($cpanel);
+        parent::__construct();
         $this->cpanel->mergeFields([
             'cpanel_jsonapi_module' => 'SSL',
         ]);
@@ -39,6 +46,7 @@ class CpanelSSL extends CpanelFunction
         ]);
         
         $response = $this->getApiData();
+        
         dd($response);
     }
 }
