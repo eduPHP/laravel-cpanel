@@ -63,7 +63,7 @@ like so:
 namespace App;
 
 
-use Swalker2\Cpanel\CpanelFunction;
+use Swalker2\Cpanel\CpanelBaseModule;
 
 class CpanelModule extends CpanelBaseModule
 {
