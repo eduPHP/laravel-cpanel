@@ -65,7 +65,7 @@ namespace App;
 
 use Swalker2\Cpanel\CpanelFunction;
 
-class CpanelModule extends CpanelFunction
+class CpanelModule extends CpanelBaseModule
 {
     
     function __construct()
