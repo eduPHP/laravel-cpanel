@@ -2,12 +2,10 @@
 
 namespace Swalker2\Cpanel\Email;
 
-
 use Swalker2\Cpanel\Cpanel;
 
 class Email
 {
-    
     public $user;
     public $domain;
     public $email;
@@ -18,21 +16,21 @@ class Email
     public $suspended_incoming;
     public $suspended_login;
     public $mtime;
-    
+
     public function __construct($item = null)
     {
         $this->setProperties($item);
     }
-    
+
     public function destroy()
     {
         $cpanel = app()->make(Cpanel::class);
-        
+
         return $cpanel
             ->email()
             ->destroy($this);
     }
-    
+
     /**
      * @param $item
      */
@@ -41,16 +39,15 @@ class Email
         if ($item != null) {
             foreach ($item as $key => $value) {
                 if (property_exists($this, $key)) {
-                    if ($key == '_diskquota' && $value <= 1000){
+                    if ($key == '_diskquota' && $value <= 1000) {
                         $value = $value * 1024 * 1024;
                     }
                     $this->{$key} = $value;
                 }
             }
         }
-        if ( ! $this->email && ($this->user && $this->domain)) {
-            $this->email = $this->user . "@" . $this->domain;
+        if (!$this->email && ($this->user && $this->domain)) {
+            $this->email = $this->user.'@'.$this->domain;
         }
     }
-    
 }

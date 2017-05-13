@@ -2,18 +2,16 @@
 
 namespace Swalker2\Cpanel\Email;
 
-
 class Forward
 {
-    
     public $dest;
     public $forward;
-    
+
     public $uri_forward;
     public $html_forward;
     public $html_dest;
     public $uri_dest;
-    
+
     /**
      * Forward constructor.
      *
@@ -23,7 +21,7 @@ class Forward
     {
         $this->setProperties($item);
     }
-    
+
     /**
      * @param $item
      */
@@ -36,10 +34,10 @@ class Forward
                 }
             }
         }
-        
-        if (! $this->uri_forward && $this->forward){
-            $this->uri_forward = str_replace('@','%40',$this->forward);
-            $this->uri_dest = str_replace('@','%40',$this->dest);
+
+        if (!$this->uri_forward && $this->forward) {
+            $this->uri_forward = str_replace('@', '%40', $this->forward);
+            $this->uri_dest = str_replace('@', '%40', $this->dest);
             $this->html_forward = $this->forward;
             $this->html_dest = $this->dest;
         }

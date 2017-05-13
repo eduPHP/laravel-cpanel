@@ -6,21 +6,20 @@ use Swalker2\Cpanel\Cpanel;
 
 abstract class BaseCpanel extends PHPUnit_Framework_TestCase
 {
-    
     /**
      * @var Cpanel
      */
     protected $cpanel;
-    
-    function __construct()
+
+    public function __construct()
     {
         parent::__construct();
-        
+
         $this->cpanel = app()->make(Cpanel::class);
     }
-    
+
     /**
-     * returns the content of the given json file
+     * returns the content of the given json file.
      *
      * @param $string
      *
@@ -28,15 +27,15 @@ abstract class BaseCpanel extends PHPUnit_Framework_TestCase
      */
     protected function getResponseFile($string)
     {
-        $filename = str_replace('.','/',$string);
-        $file = __DIR__ . "/mocks/responses/" . $filename . ".json";
+        $filename = str_replace('.', '/', $string);
+        $file = __DIR__.'/mocks/responses/'.$filename.'.json';
         if (file_exists($file)) {
             return file_get_contents($file);
         }
-        
-        return "";
+
+        return '';
     }
-    
+
     /**
      * @param $files
      *
@@ -44,12 +43,12 @@ abstract class BaseCpanel extends PHPUnit_Framework_TestCase
      */
     protected function mockResponse($files = [])
     {
-        if ( ! is_array($files)) {
+        if (!is_array($files)) {
             $files = [
                 $files,
             ];
         }
-        
+
         $responses = [];
         if (empty($files)) {
             $responses[] = new Response();
@@ -62,7 +61,7 @@ abstract class BaseCpanel extends PHPUnit_Framework_TestCase
                 );
             }
         }
-        
+
         return new MockHandler($responses);
     }
 }

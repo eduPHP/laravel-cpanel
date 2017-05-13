@@ -2,12 +2,10 @@
 
 namespace Swalker2\Cpanel\ZoneEdit;
 
-
 use Swalker2\Cpanel\Cpanel;
 
 class Zone
 {
-    
     public $line;
     public $name;
     public $domain;
@@ -16,7 +14,7 @@ class Zone
     public $type = 'A';
     public $ttl = '14400';
     public $class = 'IN';
-    
+
     /**
      * ZonaDNS constructor.
      *
@@ -26,27 +24,27 @@ class Zone
     {
         $this->setProperties($item);
     }
-    
+
     public function update($newValues = [])
     {
         $this->setProperties($newValues);
-    
+
         $cpanel = app()->make(Cpanel::class);
-        
+
         return $cpanel
             ->zoneEdit($this->domain)
             ->update($this);
     }
-    
+
     public function destroy()
     {
         $cpanel = app()->make(Cpanel::class);
-        
+
         return $cpanel
             ->zoneEdit($this->domain)
             ->destroy($this);
     }
-    
+
     /**
      * @param $item
      */
