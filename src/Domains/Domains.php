@@ -2,7 +2,6 @@
 
 namespace Swalker2\Cpanel\Domains;
 
-
 use Swalker2\Cpanel\CpanelBaseModule;
 
 class Domains extends CpanelBaseModule
@@ -14,18 +13,15 @@ class Domains extends CpanelBaseModule
             'cpanel_jsonapi_func'   => 'getbasedomains',
         ]);
         $response = $this->getApiData();
-        
     }
-    
-    public function fetchSubDomains($domain='')
+
+    public function fetchSubDomains($domain = '')
     {
         $this->cpanel->mergeFields([
             'cpanel_jsonapi_module' => 'SubDomain',
             'cpanel_jsonapi_func'   => 'listsubdomains',
-            'regex' => $domain,
+            'regex'                 => $domain,
         ]);
         $response = $this->getApiData();
-        
     }
-    
 }

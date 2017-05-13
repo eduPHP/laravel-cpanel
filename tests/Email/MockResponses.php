@@ -1,12 +1,10 @@
 <?php
 
 
-
 use GuzzleHttp\Handler\MockHandler;
 
 trait MockEmailResponses
 {
-    
     /**
      * @return MockHandler
      */
@@ -14,7 +12,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.emails.index');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -22,7 +20,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.empty');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -30,7 +28,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.emails.filter');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -38,7 +36,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.forward.index');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -46,7 +44,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.forward.store-success');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -54,7 +52,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.forward.store-error');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -62,7 +60,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.forward.destroy-success');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -70,7 +68,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.forward.destroy-error');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -78,6 +76,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.emails.password-weak');
     }
+
     /**
      * @return MockHandler
      */
@@ -85,6 +84,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.emails.password-success');
     }
+
     /**
      * @return MockHandler
      */
@@ -92,7 +92,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.emails.quota-success');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -100,7 +100,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.emails.permission-error');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -108,7 +108,7 @@ trait MockEmailResponses
     {
         return $this->mockResponse('email.fetch.emails.destroy-success');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -116,10 +116,10 @@ trait MockEmailResponses
     {
         return $this->mockResponse([
             'email.fetch.empty', //1 - search for the email but returns nothing
-            'email.result-error' //2 - try to store but get an error
+            'email.result-error', //2 - try to store but get an error
         ]);
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -131,5 +131,4 @@ trait MockEmailResponses
             'email.fetch.emails.filter',   //2 - search for the email and returns the new register
         ]);
     }
-    
 }

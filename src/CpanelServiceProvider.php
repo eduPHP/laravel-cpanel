@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class CpanelServiceProvider extends ServiceProvider
 {
-    
     /**
      * Bootstrap any application services.
      *
@@ -15,10 +14,10 @@ class CpanelServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/cpanel.php' => config_path('cpanel.php'),
-        ],'swalker2.cpanel');
+            __DIR__.'/../config/cpanel.php' => config_path('cpanel.php'),
+        ], 'swalker2.cpanel');
     }
-    
+
     /**
      * Register any application services.
      *

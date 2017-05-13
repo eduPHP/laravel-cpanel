@@ -4,7 +4,6 @@ use GuzzleHttp\Handler\MockHandler;
 
 trait MockZoneEditResponses
 {
-    
     /**
      * @return MockHandler
      */
@@ -12,7 +11,7 @@ trait MockZoneEditResponses
     {
         return $this->mockResponse('zoneedit.fetch.index');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -20,7 +19,7 @@ trait MockZoneEditResponses
     {
         return $this->mockResponse('zoneedit.fetch.filter');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -28,7 +27,7 @@ trait MockZoneEditResponses
     {
         return $this->mockResponse('zoneedit.fetch.empty');
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -36,7 +35,7 @@ trait MockZoneEditResponses
     {
         return $this->mockResponse(['zoneedit.fetch.empty', 'zoneedit.result.success', 'zoneedit.fetch.filter']);
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -44,7 +43,7 @@ trait MockZoneEditResponses
     {
         return $this->mockResponse(['zoneedit.fetch.empty', 'result-error']);
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -52,23 +51,23 @@ trait MockZoneEditResponses
     {
         return $this->mockResponse(['zoneedit.fetch.filter', 'result-error']);
     }
-    
-    /**
-     * @return MockHandler
-     */
+
+        /**
+         * @return MockHandler
+         */
         private function mockZoneEditDestroySuccessResponse()
-    {
-        return $this->mockResponse(['zoneedit.fetch.filter', 'zoneedit.result.success']);
-    }
-    
+        {
+            return $this->mockResponse(['zoneedit.fetch.filter', 'zoneedit.result.success']);
+        }
+
     /**
      * @return MockHandler
      */
     private function mockZoneEditUpdateErrorResponse()
     {
-        return $this->mockResponse(['zoneedit.fetch.filter','zoneedit.fetch.filter', 'result-error']);
+        return $this->mockResponse(['zoneedit.fetch.filter', 'zoneedit.fetch.filter', 'result-error']);
     }
-    
+
     /**
      * @return MockHandler
      */
@@ -76,8 +75,7 @@ trait MockZoneEditResponses
     {
         return $this->mockResponse(['zoneedit.fetch.filter', 'zoneedit.fetch.filter2']);
     }
-    
-    
+
     /**
      * @return MockHandler
      */
@@ -85,6 +83,4 @@ trait MockZoneEditResponses
     {
         return $this->mockResponse('zoneedit.fetch.domain-error');
     }
-
-    
 }
